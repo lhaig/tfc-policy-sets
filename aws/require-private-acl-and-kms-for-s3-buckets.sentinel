@@ -30,7 +30,7 @@ acl_allowed = rule {
 require_encryption = rule {
     all s3_buckets as _, instances {
       all instances as index, r {
-        (length(r.applied.server_side_encryption_configuration) > 0 #and r.applied.server_side_encryption_configuration[0]["rule"][0].apply_server_side_encryption_by_default[0].sse_algorithm is "aws:kms") else false
+        (length(r.applied.server_side_encryption_configuration) > 0) else false #and r.applied.server_side_encryption_configuration[0]["rule"][0].apply_server_side_encryption_by_default[0].sse_algorithm is "aws:kms") else false
       }
    }
 }
