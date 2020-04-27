@@ -1,5 +1,5 @@
 policy "enforce-mandatory-tags" {
-    enforcement_level = "advisory"
+    enforcement_level = "soft-mandatory"
 }
 
 policy "restrict-ec2-instance-type" {
@@ -7,7 +7,7 @@ policy "restrict-ec2-instance-type" {
 }
 
 policy "restrict-ingress-sg-rule-cidr-blocks" {
-    enforcement_level = "soft-mandatory"
+    enforcement_level = "advisory"
 }
 
 policy "require-private-acl-and-kms-for-s3-buckets" {
